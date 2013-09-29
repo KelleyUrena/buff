@@ -2,8 +2,8 @@ Buff::Application.routes.draw do
   resources :pins
 
   devise_for :users
-  get "home" => 'pages#home'
-  root 'pages#home'
+  get "home" => 'pins#index'
+  root 'pins#index'
   get 'about' => 'pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.

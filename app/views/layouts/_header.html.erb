@@ -6,26 +6,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-             <a class="brand" href="/">B & H</a>
+             <a class="brand" href="/">cODEnCats</a>
 
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li>
-                            <%= link_to 'Buff Blog',  root_path %>
+                            <%= link_to 'Cats',  root_path %>
                         </li>
                         <li>    
-                            <%= link_to 'Adventures',  about_path %>
+                            <%= link_to 'Paleo',  about_path %>
                         </li>
                            <li>
-                            <%= link_to 'Events',  root_path %>
+                            <%= link_to 'Code',  root_path %>
                         </li>
                         <li>    
-                            <%= link_to 'Say Meow',  about_path %>
+                            <%= link_to 'Stuff',  about_path %>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
                                 <% if user_signed_in? %>
-                                    <li><%= link_to "Add +", new_pin_path %></li>
+                                    <li><%= link_to "Add Post", new_pin_path %></li>
                                     <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                                     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                                 <% else %>

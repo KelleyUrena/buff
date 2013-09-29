@@ -12,6 +12,7 @@ group :development, :test do
 end
 
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 
 # Use SCSS for stylesheets
@@ -59,3 +60,6 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'simple_form'
 gem 'protected_attributes'
+
+
+
