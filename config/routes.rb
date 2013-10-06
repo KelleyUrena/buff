@@ -4,10 +4,10 @@ Buff::Application.routes.draw do
   devise_for :users
   get "home" => 'pins#index'
   root 'pins#index'
-  get 'paleo' => 'pages#paleo'
-  get 'cats' => 'pages#cats'
-  get 'code' => 'pages#code'
-  get 'stuff' => 'pages#stuff'
+  get 'paleo' => 'pins#paleoindex'
+  get 'cats' => 'pins#catsindex'
+  get 'code' => 'pins#codeindex'
+  get 'stuff' => 'pins#stuffindex'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

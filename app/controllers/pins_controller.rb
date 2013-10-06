@@ -8,6 +8,26 @@ class PinsController < ApplicationController
     @pins = Pin.order("created_at desc")
   end
 
+  def catsindex
+    @pins = Pin.order("created_at desc").find(:all, :conditions => {:pin_type => 'cats'})
+    render 'index'
+  end
+
+  def paleoindex
+    @pins = Pin.order("created_at desc").find(:all, :conditions => {:pin_type => 'paleo'})
+    render 'index'
+  end
+
+  def codeindex
+    @pins = Pin.order("created_at desc").find(:all, :conditions => {:pin_type => 'code'})
+    render 'index'
+  end
+
+  def stuffindex
+    @pins = Pin.order("created_at desc").find(:all, :conditions => {:pin_type => 'stuff'})
+    render 'index'
+  end
+
   # GET /pins/1
   # GET /pins/1.json
   def show
@@ -42,8 +62,9 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
+    @pin = current_user.pins.find(params[:id])
     respond_to do |format|
-      if @pin = current_user.pins.find(params[:id])
+      if @pin.update_attributes(params[:pin])
         format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
         format.json { head :no_content }
       else
